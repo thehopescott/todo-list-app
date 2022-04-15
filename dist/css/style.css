@@ -1,0 +1,470 @@
+*,
+*::after,
+*::before {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+html {
+    font-size: 62.5%;
+}
+/* #41b3a3, #85dcba */
+body {
+    background: linear-gradient(to bottom right, #41b3a3, #41b3a3);
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.aesth-shape1 {
+    position: absolute;
+    width: 5rem;
+    height: 5rem;
+    background: purple;
+    border-radius: 50%;
+    bottom: 20%;
+    left: 25%;
+    box-shadow: 0rem 0rem 5rem 5rem purple;
+}
+.aesth-shape2 {
+    position: absolute;
+    width: 5rem;
+    height: 5rem;
+    background: green;
+    border-radius: 50%;
+    bottom: 30%;
+    right: 25%;
+    box-shadow: 0rem 0rem 10rem 10rem green;
+}
+.aesth-shape3 {
+    position: absolute;
+    width: 5rem;
+    height: 5rem;
+    background: rgb(180, 53, 74);
+    border-radius: 50%;
+    bottom: 50%;
+    right: 50%;
+    box-shadow: 0rem 0rem 10rem 10rem rgb(180, 53, 74);
+}
+
+/* background: linear-gradient(
+        to bottom right,
+        rgba(0, 0, 0, 0.9),
+        rgba(0, 0, 0, 0.25)
+    ); */
+.container {
+    width: 70%;
+    height: 80vh;
+    background: #fff;
+    background: linear-gradient(
+        to bottom right,
+        rgba(255, 255, 255, 0.9),
+        rgba(255, 255, 255, 0.25)
+    );
+    backdrop-filter: blur(2rem);
+    border-radius: 2rem;
+    display: flex;
+    font-size: 1.5rem;
+}
+
+.auth-container {
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    background: rgba(119, 118, 118, 0.61);
+    z-index: 10;
+    backdrop-filter: blur(2rem);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    font-size: 1.4rem;
+}
+
+.form-switch {
+    display: flex;
+    width: 40%;
+    margin: 2rem 0;
+}
+
+.form-switch p {
+    margin-right: 1rem;
+    cursor: pointer;
+}
+.switched {
+    font-weight: bold;
+    text-decoration: underline;
+}
+.form-title {
+    line-height: 2rem;
+}
+
+.my-form {
+    width: 60%;
+    margin-top: 2rem;
+}
+
+.form-control {
+    display: flex;
+    flex-direction: column;
+    margin: 1rem 0;
+}
+.form-control input {
+    background: transparent;
+    border: none;
+    border-bottom: 0.2rem solid #333;
+    padding: 0.25rem;
+}
+.form-control input:focus {
+    outline: none;
+}
+
+.my-form button {
+    margin-top: 2rem;
+    background: #014042;
+    color: #fff;
+    border: none;
+    padding: 0.5rem 2rem;
+    cursor: pointer;
+    border-radius: 0.25rem;
+    transition: all 0.3s ease-out;
+}
+.my-form button:hover {
+    transform: translateY(-0.3rem);
+    box-shadow: 0.6rem 0.6rem 2rem 0.3rem #41b3a3;
+}
+
+.reg-form {
+    width: 40%;
+}
+
+.login-form {
+    display: none;
+    width: 40%;
+}
+
+aside {
+    width: 25%;
+    border-radius: 1rem;
+    position: relative;
+}
+
+.profile-card {
+    position: relative;
+    background: #41b3a3;
+    border-radius: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 2rem;
+    overflow: hidden;
+}
+
+.profile-options-container {
+    position: absolute;
+    background: #fff;
+    top: 1rem;
+    right: 1rem;
+    border-radius: 0.5rem;
+    font-size: 1.3rem;
+    padding: 1rem;
+    width: 50%;
+    height: 50%;
+    display: flex;
+    align-items: flex-end;
+    transform: translateX(120%);
+    transition: transform 1s ease-in-out;
+}
+
+.profile-menu {
+    list-style: none;
+    margin-top: 1rem;
+}
+
+.profile-menu a {
+    text-decoration: none;
+    display: block;
+    color: #014042;
+}
+
+.profile-options {
+    position: absolute;
+    top: 0.5rem;
+    right: 1rem;
+    font-size: 1.7rem;
+    color: #fff;
+    cursor: pointer;
+}
+
+.profile-options:hover i {
+    color: #014042;
+}
+
+.profile-pic {
+    border-radius: 50%;
+    border: 0.2rem solid #fff;
+    width: 8rem;
+    margin-top: 2rem;
+}
+
+.user-name {
+    margin-top: 2rem;
+    font-size: 1.5rem;
+}
+
+.job-title {
+    text-align: center;
+    margin: 0.5rem;
+    font-size: 1.3rem;
+    line-height: 1.5rem;
+}
+
+.user-handle {
+    font-size: 1.25rem;
+    letter-spacing: 0.1rem;
+    text-decoration: none;
+    color: #fff;
+}
+
+.social-links {
+    list-style: none;
+    display: flex;
+    justify-content: space-around;
+    width: 50%;
+    margin: 2rem;
+}
+
+.social-links a {
+    text-decoration: none;
+    font-size: 1.7rem;
+    padding: 0.25rem 1rem;
+    border-radius: 0.25rem;
+    color: #fff;
+}
+
+.social-links a:hover {
+    color: #b83612;
+}
+
+.reminders {
+    margin: 2rem;
+    font-size: 1.4rem;
+    border-top: 0.1rem solid slategrey;
+}
+
+.upcoming-tasks {
+    margin: 1rem 0;
+}
+
+.reminders ul {
+    list-style: none;
+}
+
+main {
+    width: 75%;
+    height: 100%;
+    padding: 2rem;
+}
+
+.weather-container {
+    width: 100%;
+    position: relative;
+    height: 50%;
+    border-radius: 2rem;
+    overflow: hidden;
+}
+.weather-container:hover .weather-info,
+.weather-container:focus .weather-info {
+    transform: scale(1.1);
+    cursor: pointer;
+}
+
+.weather-info {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 2rem 5rem;
+    align-items: flex-end;
+    background: url("../img/rainy-weather.webp");
+    background-size: cover;
+    background-position-y: 35rem;
+    border-radius: 2rem;
+    box-shadow: 0 0 10rem 1rem #014042 inset;
+    transition: transform 0.5s ease-in;
+}
+
+.temp-location span {
+    display: flex;
+    line-height: 1.7rem;
+}
+
+.now-icon {
+    display: flex;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+.temp {
+    font-size: 4rem;
+    margin-left: 1rem;
+}
+
+.location-city {
+    font-size: 2rem;
+    font-weight: bold;
+    letter-spacing: 0.5rem;
+}
+
+.location-country {
+    font-size: 1.2rem;
+    margin: 0.25rem 0;
+}
+
+.location-time {
+    font-size: 1.2rem;
+    color: #fff;
+    letter-spacing: 0.1rem;
+    line-height: 0rem;
+}
+
+.humidity-sunrise {
+    display: flex;
+    padding-bottom: 0.4rem;
+}
+.humidity-sunrise .title {
+    font-size: 1.1rem;
+}
+.humidity-sunrise .value {
+    font-size: 1.3rem;
+    line-height: 1rem;
+    margin-top: 0.5rem;
+}
+
+.humidity,
+.sunrise {
+    display: flex;
+    align-items: flex-end;
+    margin-left: 2rem;
+}
+.humidity img,
+.sunrise img {
+    width: 4rem;
+}
+
+.how-humid,
+.what-time {
+    margin-left: 1rem;
+    color: #fff;
+    letter-spacing: 0.1rem;
+    cursor: default;
+}
+.how-humid:hover .title,
+.what-time:hover .title {
+    color: darkred;
+}
+
+.todo-container {
+    padding-top: 2rem;
+    display: flex;
+    height: 50%;
+}
+
+.todo-form {
+    background: rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(0.5rem);
+    width: fit-content;
+    border-radius: 2rem;
+    padding: 1.5rem 2rem;
+    box-shadow: 0 0 5rem 0.01rem #cfcfcf inset;
+    width: 40%;
+}
+
+.todo-form-title {
+    margin-bottom: 2rem;
+    color: #29796e;
+}
+
+.todo-form-control {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1rem;
+    font-size: 1.3rem;
+}
+
+.todo-form-control input {
+    padding-left: 0.5rem;
+    border: none;
+    border-bottom: 0.2rem solid #41b3a3;
+    font-size: 1.2rem;
+    background: transparent;
+    color: #29796e;
+}
+.todo-form-control input:focus {
+    outline: none;
+}
+
+.todo-form button {
+    background: #29796e;
+    color: #fff;
+    border: none;
+    margin-top: 1.5rem;
+    padding: 0.5rem 2rem;
+    border-radius: 50vw;
+    cursor: pointer;
+    font-size: 1.2rem;
+    transition: all 0.3s ease-out;
+}
+.todo-form button:hover {
+    transform: translateY(-0.2rem);
+    box-shadow: 0.6rem 0.6rem 2rem 0.3rem #41b3a3;
+}
+
+.all-tasks {
+    background: #014042;
+    border-radius: 2rem;
+    margin-left: 2rem;
+    padding: 1.5rem 2rem;
+    width: 60%;
+    overflow: hidden;
+}
+
+.all-tasks-title {
+    color: #e3e3e3;
+    letter-spacing: 0.1rem;
+}
+
+.all-tasks-list {
+    margin-top: 1rem;
+    list-style: none;
+    font-size: 1.3rem;
+}
+
+.task-item {
+    display: flex;
+    border-radius: 0.5rem;
+    background: rgba(255, 255, 255, 0.7);
+    padding: 0.5rem;
+    margin: 0.5rem 0;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.task-status {
+    margin-left: 1rem;
+    font-size: 1.4rem;
+    color: #b83612;
+    cursor: pointer;
+}
+
+.task-status-complete i {
+    color: green;
+}
