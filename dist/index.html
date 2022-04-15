@@ -4,7 +4,7 @@
         <meta charset="UTF-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Javascript 2022</title>
+        <title>Todo List App with Authentication and Weather Updates</title>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
         <link
@@ -34,18 +34,29 @@
                     Hello,<br />
                     Let's get you started!
                 </h2>
+                <span class="msg-alert"></span>
                 <form method="post" action="" class="my-form">
                     <div class="form-control">
-                        <label for="fullname">What's your name?</label>
-                        <input type="text" name="fullname" id="fullname" />
+                        <label for="reg-fullname">What's your name?</label>
+                        <input
+                            type="text"
+                            name="fullname"
+                            id="reg-fullname"
+                            required
+                        />
                     </div>
                     <div class="form-control">
-                        <label for="email">What's your email?</label>
-                        <input type="text" name="email" id="email" />
+                        <label for="reg-email">What's your email?</label>
+                        <input
+                            type="text"
+                            name="email"
+                            id="reg-email"
+                            required
+                        />
                     </div>
                     <div class="form-control">
                         <label for="job">Your fancy job title.</label>
-                        <input type="text" name="job" id="job" />
+                        <input type="text" name="job" id="job" required />
                     </div>
                     <button type="submit">Submit</button>
                 </form>
@@ -101,22 +112,7 @@
                     <h3 class="upcoming-tasks">
                         Upcoming Tasks &nbsp; <i class="bi bi-alarm-fill"></i>
                     </h3>
-                    <ul>
-                        <!-- <li>
-                            <p>Lorem ipsum dolor sit amet consectetur.</p>
-                            <div class="task-cta">
-                                <button class="task-complete">Complete</button>
-                                <button class="task-delete">Delete</button>
-                            </div>
-                        </li>
-                        <li>
-                            <p>Lorem ipsum dolor sit amet consectetur.</p>
-                            <div class="task-cta">
-                                <button class="task-complete">Complete</button>
-                                <button class="task-delete">Delete</button>
-                            </div>
-                        </li> -->
-                    </ul>
+                    <ul></ul>
                 </div>
             </aside>
             <main>
@@ -124,7 +120,7 @@
                     <div class="weather-info">
                         <div class="temp-location">
                             <span class="now-icon"
-                                ><img src="partly-cloudy.png" alt="" />
+                                ><img src="./img/partly-cloudy.png" alt="" />
                                 <strong class="temp">26&deg;C</strong></span
                             >
                             <span class="location-city">Lilongwe</span>
@@ -133,14 +129,14 @@
                         </div>
                         <div class="humidity-sunrise">
                             <div class="humidity">
-                                <img src="haze-white.png" alt="" />
+                                <img src="./img/haze-white.png" alt="" />
                                 <div class="how-humid">
                                     <p class="title">Humidity</p>
                                     <p class="value">25&percnt;</p>
                                 </div>
                             </div>
                             <div class="sunrise">
-                                <img src="sunrise-white.png" alt="" />
+                                <img src="./img/sunrise-white.png" alt="" />
                                 <div class="what-time">
                                     <p class="title">Sunrise</p>
                                     <p class="value">06:10am</p>
@@ -205,6 +201,6 @@
                 </div>
             </main>
         </div>
-        <script src="app.js"></script>
+        <script src="./js/app.js"></script>
     </body>
 </html>
