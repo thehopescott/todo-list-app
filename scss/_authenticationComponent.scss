@@ -2,9 +2,9 @@
     position: absolute;
     width: 100%;
     height: 100vh;
-    background: rgba(119, 118, 118, 0.61);
+    background: rgba(119, 118, 118, 0.7);
     z-index: 10;
-    backdrop-filter: blur(2rem);
+    backdrop-filter: blur(3rem);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -19,7 +19,7 @@
         top: -0;
         left: 0;
         background: #b83612;
-        transition: width 1.5s ease-in-out;
+        transition: width 2s ease-in-out;
     }
 
     .form-switch {

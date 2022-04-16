@@ -162,15 +162,21 @@
                         <h4 class="todo-form-title">
                             What are you up to today?
                         </h4>
+                        <span class="msg-alert"></span>
                         <div class="todo-form-control">
                             <label for="todo">Task</label>
-                            <input type="text" name="todo" id="todo" required />
+                            <input
+                                type="text"
+                                name="todo"
+                                id="new-todo"
+                                required
+                            />
                         </div>
                         <div class="todo-form-control">
                             <label for="todo-desc"
                                 >Description (optional)</label
                             >
-                            <input type="text" name="desc" id="todo-desc" />
+                            <input type="text" name="desc" id="new-todo-desc" />
                         </div>
                         <button type="submit">
                             Submit &nbsp;<i class="bi bi-arrow-right"></i>
@@ -180,35 +186,7 @@
                         <h4 class="all-tasks-title">
                             Here is a list of all your tasks.
                         </h4>
-                        <ul class="all-tasks-list">
-                            <li class="task-item">
-                                <p class="task-text">
-                                    Take out the trash Lorem ipsum dolor sit
-                                    amet.
-                                </p>
-                                <p class="task-status task-status-complete">
-                                    <i class="bi bi-check-all"></i>
-                                </p>
-                            </li>
-                            <li class="task-item">
-                                <p class="task-text">
-                                    Take out the trash Lorem ipsum dolor sit
-                                    amet.
-                                </p>
-                                <p class="task-status">
-                                    <i class="bi bi-clock-history"></i>
-                                </p>
-                            </li>
-                            <li class="task-item">
-                                <p class="task-text">
-                                    Take out the trash Lorem ipsum dolor sit
-                                    amet.
-                                </p>
-                                <p class="task-status">
-                                    <i class="bi bi-clock-history"></i>
-                                </p>
-                            </li>
-                        </ul>
+                        <ul class="all-tasks-list"></ul>
                     </div>
                 </section>
             </main>
