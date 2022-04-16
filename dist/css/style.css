@@ -1,54 +1,68 @@
 *,
 *::after,
 *::before {
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-    font-family: "Poppins", sans-serif;
+  padding: 0;
+  margin: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
 }
 
 html {
-    font-size: 62.5%;
+  font-size: 62.5%;
 }
+
 /* #41b3a3, #85dcba */
 body {
-    background: linear-gradient(to bottom right, #41b3a3, #41b3a3);
-    height: 100vh;
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  background: -webkit-gradient(linear, left top, right bottom, from(#41b3a3), to(#41b3a3));
+  background: linear-gradient(to bottom right, #41b3a3, #41b3a3);
+  height: 100vh;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 .aesth-shape1 {
-    position: absolute;
-    width: 5rem;
-    height: 5rem;
-    background: purple;
-    border-radius: 50%;
-    bottom: 20%;
-    left: 25%;
-    box-shadow: 0rem 0rem 5rem 5rem purple;
+  position: absolute;
+  width: 5rem;
+  height: 5rem;
+  background: purple;
+  border-radius: 50%;
+  bottom: 20%;
+  left: 25%;
+  -webkit-box-shadow: 0rem 0rem 5rem 5rem purple;
+          box-shadow: 0rem 0rem 5rem 5rem purple;
 }
+
 .aesth-shape2 {
-    position: absolute;
-    width: 5rem;
-    height: 5rem;
-    background: green;
-    border-radius: 50%;
-    bottom: 30%;
-    right: 25%;
-    box-shadow: 0rem 0rem 10rem 10rem green;
+  position: absolute;
+  width: 5rem;
+  height: 5rem;
+  background: green;
+  border-radius: 50%;
+  bottom: 30%;
+  right: 25%;
+  -webkit-box-shadow: 0rem 0rem 10rem 10rem green;
+          box-shadow: 0rem 0rem 10rem 10rem green;
 }
+
 .aesth-shape3 {
-    position: absolute;
-    width: 5rem;
-    height: 5rem;
-    background: rgb(180, 53, 74);
-    border-radius: 50%;
-    bottom: 50%;
-    right: 50%;
-    box-shadow: 0rem 0rem 10rem 10rem rgb(180, 53, 74);
+  position: absolute;
+  width: 5rem;
+  height: 5rem;
+  background: #b4354a;
+  border-radius: 50%;
+  bottom: 50%;
+  right: 50%;
+  -webkit-box-shadow: 0rem 0rem 10rem 10rem #b4354a;
+          box-shadow: 0rem 0rem 10rem 10rem #b4354a;
 }
 
 /* background: linear-gradient(
@@ -57,431 +71,509 @@ body {
         rgba(0, 0, 0, 0.25)
     ); */
 .container {
-    width: 70%;
-    height: 80vh;
-    background: #fff;
-    background: linear-gradient(
-        to bottom right,
-        rgba(255, 255, 255, 0.9),
-        rgba(255, 255, 255, 0.25)
-    );
-    backdrop-filter: blur(2rem);
-    border-radius: 2rem;
-    display: flex;
-    font-size: 1.5rem;
+  width: 70%;
+  height: 80vh;
+  background: #fff;
+  background: -webkit-gradient(linear, left top, right bottom, from(rgba(255, 255, 255, 0.9)), to(rgba(255, 255, 255, 0.25)));
+  background: linear-gradient(to bottom right, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.25));
+  -webkit-backdrop-filter: blur(2rem);
+          backdrop-filter: blur(2rem);
+  border-radius: 2rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  font-size: 1.5rem;
+}
+
+.container aside {
+  width: 25%;
+  position: relative;
+  padding: 2rem;
+}
+
+.container main {
+  width: 75%;
+  height: 100%;
+  padding: 2rem;
 }
 
 .auth-container {
-    position: absolute;
-    width: 100%;
-    height: 100vh;
-    background: rgba(119, 118, 118, 0.61);
-    z-index: 10;
-    backdrop-filter: blur(2rem);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    font-size: 1.4rem;
+  position: absolute;
+  width: 100%;
+  height: 100vh;
+  background: rgba(119, 118, 118, 0.61);
+  z-index: 10;
+  -webkit-backdrop-filter: blur(2rem);
+          backdrop-filter: blur(2rem);
+  display: none;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  font-size: 1.4rem;
 }
 
-.form-switch {
-    display: flex;
-    width: 40%;
-    margin: 2rem 0;
+.auth-container .form-switch {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 40%;
+  margin: 2rem 0;
 }
 
-.form-switch p {
-    margin-right: 1rem;
-    cursor: pointer;
-}
-.switched {
-    font-weight: bold;
-    text-decoration: underline;
-}
-.form-title {
-    line-height: 2rem;
-    margin-bottom: 1rem;
+.auth-container .form-switch p {
+  margin-right: 1rem;
+  cursor: pointer;
 }
 
-.msg-alert {
-    background: white;
-    width: 60%;
-    padding: 0.5rem;
-    display: none;
-    opacity: 0;
-    border-radius: 0.3rem;
-    transition: all 0.5s ease-in;
-    line-height: 1.3rem;
-    font-size: 1.2rem;
+.auth-container .form-switch .switched {
+  font-weight: bold;
+  text-decoration: underline;
 }
 
-.my-form {
-    width: 60%;
-    margin-top: 2rem;
+.auth-container .reg-form {
+  width: 40%;
 }
 
-.form-control {
-    display: flex;
-    flex-direction: column;
-    margin: 1rem 0;
-}
-.form-control input {
-    background: transparent;
-    border: none;
-    border-bottom: 0.2rem solid #333;
-    padding: 0.25rem;
-}
-.form-control input:focus {
-    outline: none;
+.auth-container .login-form {
+  display: none;
+  width: 40%;
 }
 
-.my-form button {
-    margin-top: 2rem;
-    background: #014042;
-    color: #fff;
-    border: 0.2rem solid #014042;
-    padding: 0.5rem 2rem;
-    cursor: pointer;
-    border-radius: 0.25rem;
-    transition: all 0.3s ease-out;
-}
-.my-form button:hover {
-    transform: translateY(-0.3rem);
-    box-shadow: 0.6rem 0.6rem 2rem 0.3rem #41b3a3;
-}
-.my-form button:active {
-    background: #fff;
-    color: #014042;
+.auth-container .form-title {
+  line-height: 2rem;
+  margin-bottom: 1rem;
 }
 
-.reg-form {
-    width: 40%;
+.auth-container .msg-alert {
+  background: white;
+  width: 60%;
+  padding: 0.5rem;
+  display: none;
+  opacity: 0;
+  border-radius: 0.3rem;
+  -webkit-transition: all 0.5s ease-in;
+  transition: all 0.5s ease-in;
+  line-height: 1.3rem;
+  font-size: 1.2rem;
 }
 
-.login-form {
-    display: none;
-    width: 40%;
+.auth-container .my-form {
+  width: 60%;
+  margin-top: 2rem;
 }
 
-aside {
-    width: 25%;
-    border-radius: 1rem;
-    position: relative;
+.auth-container .my-form .form-control {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin: 1rem 0;
 }
 
-.profile-card {
-    position: relative;
-    background: #41b3a3;
-    border-radius: 1rem;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    margin: 2rem;
-    overflow: hidden;
+.auth-container .my-form .form-control input {
+  background: transparent;
+  border: none;
+  border-bottom: 0.2rem solid #333;
+  padding: 0.25rem;
 }
 
-.profile-options-container {
-    position: absolute;
-    background: #fff;
-    top: 1rem;
-    right: 1rem;
-    border-radius: 0.5rem;
-    font-size: 1.3rem;
-    padding: 1rem;
-    width: 50%;
-    height: 50%;
-    display: flex;
-    align-items: flex-end;
-    transform: translateX(120%);
-    transition: transform 1s ease-in-out;
+.auth-container .my-form .form-control input:focus {
+  outline: none;
 }
 
-.profile-menu {
-    list-style: none;
-    margin-top: 1rem;
+.auth-container .my-form button {
+  margin-top: 2rem;
+  background: #014042;
+  color: #fff;
+  border: 0.2rem solid #014042;
+  padding: 0.5rem 2rem;
+  cursor: pointer;
+  border-radius: 0.25rem;
+  -webkit-transition: all 0.3s ease-out;
+  transition: all 0.3s ease-out;
 }
 
-.profile-menu a {
-    text-decoration: none;
-    display: block;
-    color: #014042;
+.auth-container .my-form button:hover {
+  -webkit-transform: translateY(-0.3rem);
+          transform: translateY(-0.3rem);
+  -webkit-box-shadow: 0.6rem 0.6rem 2rem 0.3rem #41b3a3;
+          box-shadow: 0.6rem 0.6rem 2rem 0.3rem #41b3a3;
 }
 
-.profile-options {
-    position: absolute;
-    top: 0.5rem;
-    right: 1rem;
-    font-size: 1.7rem;
-    color: #fff;
-    cursor: pointer;
+aside .profile-card {
+  position: relative;
+  background: #41b3a3;
+  border-radius: 1rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  overflow: hidden;
 }
 
-.profile-options:hover i {
-    color: #014042;
+aside .profile-card .profile-options {
+  position: absolute;
+  top: 0.5rem;
+  right: 1rem;
+  font-size: 1.7rem;
+  color: #fff;
+  cursor: pointer;
 }
 
-.profile-pic {
-    border-radius: 50%;
-    border: 0.2rem solid #fff;
-    width: 8rem;
-    margin-top: 2rem;
+aside .profile-card .profile-options:hover i {
+  color: #014042;
 }
 
-.user-name {
-    margin-top: 2rem;
-    font-size: 1.5rem;
+aside .profile-card .profile-options-container {
+  position: absolute;
+  background: #fff;
+  top: 1rem;
+  right: 1rem;
+  border-radius: 0.5rem;
+  font-size: 1.3rem;
+  padding: 1rem;
+  width: 50%;
+  height: 50%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  -webkit-transform: translateX(120%);
+          transform: translateX(120%);
+  -webkit-transition: -webkit-transform 1s ease-in-out;
+  transition: -webkit-transform 1s ease-in-out;
+  transition: transform 1s ease-in-out;
+  transition: transform 1s ease-in-out, -webkit-transform 1s ease-in-out;
 }
 
-.job-title {
-    text-align: center;
-    margin: 0.5rem;
-    font-size: 1.3rem;
-    line-height: 1.5rem;
+aside .profile-card .profile-options-container .profile-menu {
+  list-style: none;
+  margin-top: 1rem;
 }
 
-.user-handle {
-    font-size: 1.25rem;
-    letter-spacing: 0.1rem;
-    text-decoration: none;
-    color: #fff;
+aside .profile-card .profile-options-container .profile-menu a {
+  text-decoration: none;
+  display: block;
+  color: #014042;
 }
 
-.social-links {
-    list-style: none;
-    display: flex;
-    justify-content: space-around;
-    width: 50%;
-    margin: 2rem;
+aside .profile-card .profile-pic {
+  border-radius: 50%;
+  border: 0.2rem solid #fff;
+  width: 8rem;
+  margin-top: 2rem;
 }
 
-.social-links a {
-    text-decoration: none;
-    font-size: 1.7rem;
-    padding: 0.25rem 1rem;
-    border-radius: 0.25rem;
-    color: #fff;
+aside .profile-card .user-name {
+  margin-top: 2rem;
+  font-size: 1.5rem;
 }
 
-.social-links a:hover {
-    color: #b83612;
+aside .profile-card .job-title {
+  text-align: center;
+  margin: 0.5rem;
+  font-size: 1.3rem;
+  line-height: 1.5rem;
 }
 
-.reminders {
-    margin: 2rem;
-    font-size: 1.4rem;
-    border-top: 0.1rem solid slategrey;
+aside .profile-card .user-handle {
+  font-size: 1.25rem;
+  letter-spacing: 0.1rem;
+  text-decoration: none;
+  color: #fff;
 }
 
-.upcoming-tasks {
-    margin: 1rem 0;
+aside .profile-card .social-links {
+  list-style: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  width: 50%;
+  margin: 2rem;
 }
 
-.reminders ul {
-    list-style: none;
+aside .profile-card .social-links a {
+  text-decoration: none;
+  font-size: 1.7rem;
+  padding: 0.25rem 1rem;
+  border-radius: 0.25rem;
+  color: #fff;
 }
 
-main {
-    width: 75%;
-    height: 100%;
-    padding: 2rem;
+aside .profile-card .social-links a:hover {
+  color: #b83612;
+}
+
+aside .reminders {
+  font-size: 1.4rem;
+}
+
+aside .reminders .reminders-title {
+  margin: 2rem 0;
 }
 
 .weather-container {
-    width: 100%;
-    position: relative;
-    height: 50%;
-    border-radius: 2rem;
-    overflow: hidden;
+  width: 100%;
+  position: relative;
+  height: 50%;
+  border-radius: 2rem;
+  overflow: hidden;
 }
+
+.weather-container .weather-info {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 2rem 5rem;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  background: url("../img/rainy-weather.webp");
+  background-size: cover;
+  background-position-y: 35rem;
+  border-radius: 2rem;
+  -webkit-box-shadow: 0 0 10rem 1rem #014042 inset;
+          box-shadow: 0 0 10rem 1rem #014042 inset;
+  -webkit-transition: -webkit-transform 0.5s ease-in;
+  transition: -webkit-transform 0.5s ease-in;
+  transition: transform 0.5s ease-in;
+  transition: transform 0.5s ease-in, -webkit-transform 0.5s ease-in;
+}
+
+.weather-container .weather-info .temp-location span {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  line-height: 1.7rem;
+}
+
+.weather-container .weather-info .temp-location .now-icon {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-bottom: 1rem;
+}
+
+.weather-container .weather-info .temp-location .now-icon .temp {
+  font-size: 4rem;
+  margin-left: 1rem;
+}
+
+.weather-container .weather-info .temp-location .location-city {
+  font-size: 2rem;
+  font-weight: bold;
+  letter-spacing: 0.5rem;
+}
+
+.weather-container .weather-info .temp-location .location-country {
+  font-size: 1.2rem;
+  margin: 0.25rem 0;
+}
+
+.weather-container .weather-info .temp-location .location-time {
+  font-size: 1.2rem;
+  color: #fff;
+  letter-spacing: 0.1rem;
+}
+
+.weather-container .weather-info .humidity-sunrise {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding-bottom: 0.4rem;
+}
+
+.weather-container .weather-info .humidity-sunrise .title {
+  font-size: 1.1rem;
+}
+
+.weather-container .weather-info .humidity-sunrise .value {
+  font-size: 1.3rem;
+  line-height: 1rem;
+  margin-top: 0.5rem;
+}
+
+.weather-container .weather-info .humidity-sunrise .humidity,
+.weather-container .weather-info .humidity-sunrise .sunrise {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  margin-left: 2rem;
+}
+
+.weather-container .weather-info .humidity-sunrise .humidity img,
+.weather-container .weather-info .humidity-sunrise .sunrise img {
+  width: 4rem;
+}
+
+.weather-container .weather-info .humidity-sunrise .humidity .how-humid,
+.weather-container .weather-info .humidity-sunrise .humidity .what-time,
+.weather-container .weather-info .humidity-sunrise .sunrise .how-humid,
+.weather-container .weather-info .humidity-sunrise .sunrise .what-time {
+  margin-left: 1rem;
+  color: #fff;
+  letter-spacing: 0.1rem;
+}
+
 .weather-container:hover .weather-info,
 .weather-container:focus .weather-info {
-    transform: scale(1.1);
-    cursor: pointer;
-}
-
-.weather-info {
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    justify-content: space-between;
-    padding: 2rem 5rem;
-    align-items: flex-end;
-    background: url("../img/rainy-weather.webp");
-    background-size: cover;
-    background-position-y: 35rem;
-    border-radius: 2rem;
-    box-shadow: 0 0 10rem 1rem #014042 inset;
-    transition: transform 0.5s ease-in;
-}
-
-.temp-location span {
-    display: flex;
-    line-height: 1.7rem;
-}
-
-.now-icon {
-    display: flex;
-    align-items: center;
-    margin-bottom: 2rem;
-}
-
-.temp {
-    font-size: 4rem;
-    margin-left: 1rem;
-}
-
-.location-city {
-    font-size: 2rem;
-    font-weight: bold;
-    letter-spacing: 0.5rem;
-}
-
-.location-country {
-    font-size: 1.2rem;
-    margin: 0.25rem 0;
-}
-
-.location-time {
-    font-size: 1.2rem;
-    color: #fff;
-    letter-spacing: 0.1rem;
-    line-height: 0rem;
-}
-
-.humidity-sunrise {
-    display: flex;
-    padding-bottom: 0.4rem;
-}
-.humidity-sunrise .title {
-    font-size: 1.1rem;
-}
-.humidity-sunrise .value {
-    font-size: 1.3rem;
-    line-height: 1rem;
-    margin-top: 0.5rem;
-}
-
-.humidity,
-.sunrise {
-    display: flex;
-    align-items: flex-end;
-    margin-left: 2rem;
-}
-.humidity img,
-.sunrise img {
-    width: 4rem;
-}
-
-.how-humid,
-.what-time {
-    margin-left: 1rem;
-    color: #fff;
-    letter-spacing: 0.1rem;
-    cursor: default;
-}
-.how-humid:hover .title,
-.what-time:hover .title {
-    color: darkred;
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
 }
 
 .todo-container {
-    padding-top: 2rem;
-    display: flex;
-    height: 50%;
+  padding-top: 2rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 50%;
 }
 
-.todo-form {
-    background: rgba(255, 255, 255, 0.5);
-    backdrop-filter: blur(0.5rem);
-    width: fit-content;
-    border-radius: 2rem;
-    padding: 1.5rem 2rem;
-    box-shadow: 0 0 5rem 0.01rem #cfcfcf inset;
-    width: 40%;
+.todo-container .todo-form {
+  background: rgba(255, 255, 255, 0.5);
+  -webkit-backdrop-filter: blur(0.5rem);
+          backdrop-filter: blur(0.5rem);
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  border-radius: 2rem;
+  padding: 1.5rem 2rem;
+  -webkit-box-shadow: 0 0 5rem 0.01rem #cfcfcf inset;
+          box-shadow: 0 0 5rem 0.01rem #cfcfcf inset;
+  width: 40%;
 }
 
-.todo-form-title {
-    margin-bottom: 2rem;
-    color: #29796e;
+.todo-container .todo-form .todo-form-title {
+  margin-bottom: 2rem;
+  color: #29796e;
 }
 
-.todo-form-control {
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 1rem;
-    font-size: 1.3rem;
+.todo-container .todo-form .todo-form-control {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin-bottom: 1rem;
+  font-size: 1.3rem;
 }
 
-.todo-form-control input {
-    padding-left: 0.5rem;
-    border: none;
-    border-bottom: 0.2rem solid #41b3a3;
-    font-size: 1.2rem;
-    background: transparent;
-    color: #29796e;
-}
-.todo-form-control input:focus {
-    outline: none;
+.todo-container .todo-form .todo-form-control input {
+  padding-left: 0.5rem;
+  border: none;
+  border-bottom: 0.2rem solid #41b3a3;
+  font-size: 1.2rem;
+  background: transparent;
+  color: #29796e;
 }
 
-.todo-form button {
-    background: #29796e;
-    color: #fff;
-    border: none;
-    margin-top: 1.5rem;
-    padding: 0.5rem 2rem;
-    border-radius: 50vw;
-    cursor: pointer;
-    font-size: 1.2rem;
-    transition: all 0.3s ease-out;
-}
-.todo-form button:hover {
-    transform: translateY(-0.2rem);
-    box-shadow: 0.6rem 0.6rem 2rem 0.3rem #41b3a3;
+.todo-container .todo-form .todo-form-control input:focus {
+  outline: none;
 }
 
-.all-tasks {
-    background: #014042;
-    border-radius: 2rem;
-    margin-left: 2rem;
-    padding: 1.5rem 2rem;
-    width: 60%;
-    overflow: hidden;
+.todo-container .todo-form button {
+  background: #29796e;
+  color: #fff;
+  border: none;
+  margin-top: 1.5rem;
+  padding: 0.5rem 2rem;
+  border-radius: 50vw;
+  cursor: pointer;
+  font-size: 1.2rem;
+  -webkit-transition: all 0.3s ease-out;
+  transition: all 0.3s ease-out;
 }
 
-.all-tasks-title {
-    color: #e3e3e3;
-    letter-spacing: 0.1rem;
+.todo-container .todo-form button:hover {
+  -webkit-transform: translateY(-0.2rem);
+          transform: translateY(-0.2rem);
+  -webkit-box-shadow: 0.6rem 0.6rem 2rem 0.3rem #41b3a3;
+          box-shadow: 0.6rem 0.6rem 2rem 0.3rem #41b3a3;
 }
 
-.all-tasks-list {
-    margin-top: 1rem;
-    list-style: none;
-    font-size: 1.3rem;
+.todo-container .all-tasks {
+  background: #014042;
+  border-radius: 2rem;
+  margin-left: 2rem;
+  padding: 1.5rem 2rem;
+  width: 60%;
+  overflow: hidden;
 }
 
-.task-item {
-    display: flex;
-    border-radius: 0.5rem;
-    background: rgba(255, 255, 255, 0.7);
-    padding: 0.5rem;
-    margin: 0.5rem 0;
-    justify-content: space-between;
-    align-items: center;
+.todo-container .all-tasks .all-tasks-title {
+  color: #e3e3e3;
+  letter-spacing: 0.1rem;
 }
 
-.task-status {
-    margin-left: 1rem;
-    font-size: 1.4rem;
-    color: #b83612;
-    cursor: pointer;
+.todo-container .all-tasks .all-tasks-list {
+  margin-top: 1rem;
+  list-style: none;
+  font-size: 1.3rem;
 }
 
-.task-status-complete i {
-    color: green;
+.todo-container .all-tasks .all-tasks-list .task-item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  border-radius: 0.5rem;
+  background: rgba(255, 255, 255, 0.7);
+  padding: 0.5rem;
+  margin: 0.5rem 0;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
+
+.todo-container .all-tasks .all-tasks-list .task-item .task-status {
+  margin-left: 1rem;
+  font-size: 1.4rem;
+  color: #b83612;
+  cursor: pointer;
+}
+
+.todo-container .all-tasks .all-tasks-list .task-item .task-status-complete i {
+  color: green;
+}
+/*# sourceMappingURL=style.css.map */

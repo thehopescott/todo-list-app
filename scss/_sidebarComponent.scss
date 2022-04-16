@@ -1,0 +1,106 @@
+aside {
+    .profile-card {
+        position: relative;
+        background: #41b3a3;
+        border-radius: 1rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+
+        .profile-options {
+            position: absolute;
+            top: 0.5rem;
+            right: 1rem;
+            font-size: 1.7rem;
+            color: #fff;
+            cursor: pointer;
+
+            &:hover i {
+                color: #014042;
+            }
+        }
+
+        .profile-options-container {
+            position: absolute;
+            background: #fff;
+            top: 1rem;
+            right: 1rem;
+            border-radius: 0.5rem;
+            font-size: 1.3rem;
+            padding: 1rem;
+            width: 50%;
+            height: 50%;
+            display: flex;
+            align-items: flex-end;
+            transform: translateX(120%);
+            transition: transform 1s ease-in-out;
+
+            .profile-menu {
+                list-style: none;
+                margin-top: 1rem;
+
+                a {
+                    text-decoration: none;
+                    display: block;
+                    color: #014042;
+                }
+            }
+        }
+
+        .profile-pic {
+            border-radius: 50%;
+            border: 0.2rem solid #fff;
+            width: 8rem;
+            margin-top: 2rem;
+        }
+
+        .user-name {
+            margin-top: 2rem;
+            font-size: 1.5rem;
+        }
+
+        .job-title {
+            text-align: center;
+            margin: 0.5rem;
+            font-size: 1.3rem;
+            line-height: 1.5rem;
+        }
+
+        .user-handle {
+            font-size: 1.25rem;
+            letter-spacing: 0.1rem;
+            text-decoration: none;
+            color: #fff;
+        }
+
+        .social-links {
+            list-style: none;
+            display: flex;
+            justify-content: space-around;
+            width: 50%;
+            margin: 2rem;
+
+            a {
+                text-decoration: none;
+                font-size: 1.7rem;
+                padding: 0.25rem 1rem;
+                border-radius: 0.25rem;
+                color: #fff;
+
+                &:hover {
+                    color: #b83612;
+                }
+            }
+        }
+    }
+
+    .reminders {
+        font-size: 1.4rem;
+
+        .reminders-title {
+            margin: 2rem 0;
+        }
+    }
+}

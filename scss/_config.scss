@@ -1,0 +1,84 @@
+*,
+*::after,
+*::before {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+html {
+    font-size: 62.5%;
+}
+/* #41b3a3, #85dcba */
+body {
+    background: linear-gradient(to bottom right, #41b3a3, #41b3a3);
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.aesth-shape1 {
+    position: absolute;
+    width: 5rem;
+    height: 5rem;
+    background: purple;
+    border-radius: 50%;
+    bottom: 20%;
+    left: 25%;
+    box-shadow: 0rem 0rem 5rem 5rem purple;
+}
+.aesth-shape2 {
+    position: absolute;
+    width: 5rem;
+    height: 5rem;
+    background: green;
+    border-radius: 50%;
+    bottom: 30%;
+    right: 25%;
+    box-shadow: 0rem 0rem 10rem 10rem green;
+}
+.aesth-shape3 {
+    position: absolute;
+    width: 5rem;
+    height: 5rem;
+    background: rgb(180, 53, 74);
+    border-radius: 50%;
+    bottom: 50%;
+    right: 50%;
+    box-shadow: 0rem 0rem 10rem 10rem rgb(180, 53, 74);
+}
+
+/* background: linear-gradient(
+        to bottom right,
+        rgba(0, 0, 0, 0.9),
+        rgba(0, 0, 0, 0.25)
+    ); */
+.container {
+    width: 70%;
+    height: 80vh;
+    background: #fff;
+    background: linear-gradient(
+        to bottom right,
+        rgba(255, 255, 255, 0.9),
+        rgba(255, 255, 255, 0.25)
+    );
+    backdrop-filter: blur(2rem);
+    border-radius: 2rem;
+    display: flex;
+    font-size: 1.5rem;
+
+    aside {
+        width: 25%;
+        position: relative;
+        padding: 2rem;
+    }
+
+    main {
+        width: 75%;
+        height: 100%;
+        padding: 2rem;
+    }
+}
