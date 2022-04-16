@@ -25,6 +25,7 @@
         <div class="aesth-shape2"></div>
         <div class="aesth-shape3"></div>
         <div class="auth-container">
+            <div class="auth-loader"></div>
             <div class="form-switch">
                 <p class="reg-switch switched">Register</p>
                 <p class="login-switch">Login</p>
@@ -66,14 +67,25 @@
                     Hello,<br />
                     Welcome back!
                 </h2>
+                <span class="msg-alert"></span>
                 <form method="post" action="" class="my-form">
                     <div class="form-control">
-                        <label for="fullname">Your name?</label>
-                        <input type="text" name="fullname" id="fullname" />
+                        <label for="login-fullname">Your name?</label>
+                        <input
+                            type="text"
+                            name="fullname"
+                            id="login-fullname"
+                            required
+                        />
                     </div>
                     <div class="form-control">
-                        <label for="email">Email?</label>
-                        <input type="text" name="email" id="email" />
+                        <label for="login-email">Email?</label>
+                        <input
+                            type="text"
+                            name="email"
+                            id="login-email"
+                            required
+                        />
                     </div>
                     <button type="submit">Login</button>
                 </form>

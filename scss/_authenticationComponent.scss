@@ -5,11 +5,22 @@
     background: rgba(119, 118, 118, 0.61);
     z-index: 10;
     backdrop-filter: blur(2rem);
-    display: none;
+    display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
     font-size: 1.4rem;
+
+    .auth-loader {
+        padding: 0;
+        width: 0;
+        height: 0.3rem;
+        position: inherit;
+        top: -0;
+        left: 0;
+        background: #b83612;
+        transition: width 1.5s ease-in-out;
+    }
 
     .form-switch {
         display: flex;
