@@ -24,6 +24,11 @@
         <div class="aesth-shape1"></div>
         <div class="aesth-shape2"></div>
         <div class="aesth-shape3"></div>
+        <p class="profile-edit-alert">
+            Profile details have been updated and you are now being logged out.
+            <br />
+            Please login with your new details.
+        </p>
         <div class="auth-container">
             <div class="auth-loader"></div>
             <div class="form-switch">
@@ -96,12 +101,29 @@
         <div class="container">
             <aside>
                 <div class="profile-card">
-                    <div class="profile-options">
+                    <div class="profile-edit-container">
+                        <i class="bi bi-x-lg" id="pe-close"></i>
+                        <div class="edit-photo">
+                            <img
+                                class="profile-pic"
+                                src="https://via.placeholder.com/100"
+                                alt="Profile Picture"
+                            />
+                            <p><i class="bi bi-camera"></i></p>
+                        </div>
+                        <form action="" class="edit-user-details">
+                            <input type="text" name="newName" id="new-name" />
+                            <input type="text" name="newJob" id="new-job" />
+                            <button type="submit" id="pe-submit">Update</button>
+                        </form>
+                    </div>
+                    <div id="profile-options">
                         <i class="bi bi-three-dots"></i>
                     </div>
                     <div class="profile-options-container">
+                        <i class="bi bi-x-lg"></i>
                         <ul class="profile-menu">
-                            <li><a href="#">Edit Profile</a></li>
+                            <li><a href="#" id="pe-open">Edit Profile</a></li>
                             <li><a href="#">Logout</a></li>
                         </ul>
                     </div>

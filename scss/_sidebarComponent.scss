@@ -9,7 +9,82 @@ aside {
         justify-content: center;
         overflow: hidden;
 
-        .profile-options {
+        .profile-edit-container {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            right: 0;
+            background: #fff;
+            z-index: 5;
+            transform: translateX(100%);
+            transition: transform 0.5s ease-in;
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            border: 0.2rem solid #014042;
+            border-radius: 1rem;
+
+            i#pe-close {
+                position: absolute;
+                top: 1rem;
+                right: 1rem;
+                color: #b83612;
+                cursor: pointer;
+            }
+
+            .edit-photo {
+                position: relative;
+                margin-top: 1rem;
+                p {
+                    position: absolute;
+                    bottom: 0;
+                    right: 0;
+                    width: 3.5rem;
+                    height: 3.5rem;
+                    border-radius: 50%;
+                    background: #014042;
+                    color: #fff;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    cursor: pointer;
+                }
+                img {
+                    border: 0.3rem solid #014042;
+                }
+            }
+            .edit-user-details {
+                margin-top: 1rem;
+                input {
+                    border: none;
+                    border-bottom: 0.2rem solid #014042;
+                    margin: 0.5rem 2rem;
+                    padding: 0 0.5rem;
+                    font-size: 1.2rem;
+                    color: #014042;
+
+                    &:focus {
+                        outline: none;
+                    }
+                }
+                button {
+                    margin: 1rem 2rem;
+                    background: transparent;
+                    color: #014042;
+                    border-radius: 0.5rem;
+                    padding: 0.5rem 2rem;
+                    border: 0.2rem solid #014042;
+                    cursor: pointer;
+                }
+            }
+        }
+
+        .open-profile-edit {
+            transform: translateX(0%);
+        }
+
+        #profile-options {
             position: absolute;
             top: 0.5rem;
             right: 1rem;
@@ -35,7 +110,15 @@ aside {
             display: flex;
             align-items: flex-end;
             transform: translateX(120%);
-            transition: transform 1s ease-in-out;
+            transition: transform 0.5s ease-in-out;
+
+            i {
+                position: absolute;
+                top: 1rem;
+                right: 1rem;
+                color: #b83612;
+                cursor: pointer;
+            }
 
             .profile-menu {
                 list-style: none;
@@ -45,8 +128,13 @@ aside {
                     text-decoration: none;
                     display: block;
                     color: #014042;
+                    cursor: pointer;
                 }
             }
+        }
+
+        .open-profile-options {
+            transform: translateX(0%);
         }
 
         .profile-pic {
