@@ -573,7 +573,7 @@ aside .reminders .reminders-title {
 }
 
 .todo-container .all-tasks .all-tasks-list {
-  margin-top: 1rem;
+  margin: 2rem 0;
   list-style: none;
   font-size: 1.3rem;
 }
@@ -603,5 +603,43 @@ aside .reminders .reminders-title {
 
 .todo-container .all-tasks .all-tasks-list .task-item .task-status-complete i {
   color: green;
+}
+
+.todo-container .all-tasks .all-tasks-list .task-fadeout {
+  -webkit-animation: todoFadeout 0.5s ease-out forwards;
+          animation: todoFadeout 0.5s ease-out forwards;
+}
+
+@-webkit-keyframes todoFadeout {
+  from {
+    opacity: 1;
+    -webkit-transform: scale(1);
+            transform: scale(1);
+    display: -webkit-box;
+    display: flex;
+  }
+  to {
+    opacity: 0;
+    -webkit-transform: scale(0);
+            transform: scale(0);
+    display: none;
+  }
+}
+
+@keyframes todoFadeout {
+  from {
+    opacity: 1;
+    -webkit-transform: scale(1);
+            transform: scale(1);
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+  to {
+    opacity: 0;
+    -webkit-transform: scale(0);
+            transform: scale(0);
+    display: none;
+  }
 }
 /*# sourceMappingURL=style.css.map */

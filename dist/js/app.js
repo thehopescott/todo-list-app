@@ -119,15 +119,23 @@ let queryUserData = () => {
 };
 
 //Appending  new todo item to the list
-let appendTodo = (todoTextContent) => {
+let appendTodo = (todoObject) => {
     const todoItem = document.createElement("li");
     const todoText = document.createElement("p");
     const todoItemStatus = document.createElement("p");
+    let todoStatus;
     todoItem.classList.add("task-item");
     todoText.classList.add("task-text");
-    todoItemStatus.classList.add("task-status");
-    todoText.textContent = todoTextContent;
-    todoItemStatus.innerHTML = `<i class='bi bi-clock-history'></i>`;
+    if (todoObject.todoStatus === false) {
+        todoStatus = "bi-clock-history";
+        todoItemStatus.classList.add("task-status");
+    } else {
+        todoStatus = "bi-check-all";
+        todoItemStatus.classList.add("task-status");
+        todoItemStatus.classList.add("task-status-complete");
+    }
+    todoText.textContent = todoObject.todoTextContent;
+    todoItemStatus.innerHTML = `<i class='bi ${todoStatus}'></i>`;
     todoItem.appendChild(todoText);
     todoItem.appendChild(todoItemStatus);
     document.querySelector(".all-tasks-list").appendChild(todoItem);
@@ -148,12 +156,41 @@ let displayLoginStatusMessage = (color, msg) => {
     loginFormAlert.style.display = "block";
     loginFormAlert.style.opacity = 1;
 };
+
 //Alert Message for New Todo
 let newTodoAlertMessage = (color, msg) => {
     document.querySelector(".todo-form .msg-alert").textContent = msg;
     document.querySelector(".todo-form .msg-alert").style.color = color;
     document.querySelector(".todo-form .msg-alert").style.display = "block";
     document.querySelector(".todo-form .msg-alert").style.opacity = 1;
+};
+
+let saveTodos = () => {
+    let userCurrentTodos = [];
+
+    let isComplete;
+    document.querySelectorAll(".all-tasks-list li").forEach((item) => {
+        if (
+            item.lastElementChild.firstElementChild.classList[1] ===
+            "bi-clock-history"
+        ) {
+            isComplete = false;
+        } else {
+            isComplete = true;
+        }
+        let todoObject = {
+            todoTextContent: item.firstElementChild.textContent,
+            todoStatus: isComplete,
+        };
+        userCurrentTodos.push(todoObject);
+    });
+
+    allTodos.forEach((u) => {
+        if (u.handle === userData.handle) {
+            u.myTodoList = userCurrentTodos;
+        }
+    });
+    localStorage.setItem("todos", JSON.stringify(allTodos));
 };
 
 //User Registration Process
@@ -254,27 +291,24 @@ loginFormBtn.addEventListener("click", (e) => {
             } else {
                 const newTodo =
                     document.querySelector("#new-todo").value +
-                    ` - ${document.querySelector("#new-todo-desc").value}`;
-                appendTodo(newTodo);
+                    ` ${document.querySelector("#new-todo-desc").value}`;
+                const todoItem = document.createElement("li");
+                const todoText = document.createElement("p");
+                const todoItemStatus = document.createElement("p");
+                todoItem.classList.add("task-item");
+                todoText.classList.add("task-text");
+                todoItemStatus.classList.add("task-status");
+                todoText.textContent = newTodo;
+                todoItemStatus.innerHTML = `<i class='bi bi-clock-history'></i>`;
+                todoItem.appendChild(todoText);
+                todoItem.appendChild(todoItemStatus);
+                document.querySelector(".all-tasks-list").appendChild(todoItem);
 
                 document.querySelectorAll(".todo-form input").forEach((i) => {
                     i.value = "";
                 });
                 //Add the current tasks list to localStorage
-                let userCurrentTodos = [];
-                document
-                    .querySelectorAll(".all-tasks-list li")
-                    .forEach((item) => {
-                        userCurrentTodos.push(item.textContent);
-                    });
-                console.log(userCurrentTodos);
-
-                allTodos.forEach((u) => {
-                    if (u.handle === userData.handle) {
-                        u.myTodoList = userCurrentTodos;
-                    }
-                });
-                localStorage.setItem("todos", JSON.stringify(allTodos));
+                saveTodos();
 
                 newTodoAlertMessage("green", "Task added successfully.");
                 setTimeout(() => {
@@ -284,6 +318,42 @@ loginFormBtn.addEventListener("click", (e) => {
                 }, 3000);
             }
         });
+
+        //TASK ITEM CTA: Changing Status, Editing and Deleting
+        //Changing todo status
+        setTimeout(() => {
+            document.querySelectorAll(".all-tasks-list li").forEach((item) => {
+                const todoStatusBtn = item.lastElementChild;
+                todoStatusBtn.addEventListener("click", (e) => {
+                    e.preventDefault();
+                    if (
+                        todoStatusBtn.firstElementChild.classList[1] ===
+                        "bi-clock-history"
+                    ) {
+                        todoStatusBtn.innerHTML = `<i class='bi bi-check-all'></i>`;
+                        todoStatusBtn.classList.add("task-status-complete");
+                    } else {
+                        todoStatusBtn.innerHTML = `<i class='bi bi-clock-history'></i>`;
+                        todoStatusBtn.classList.remove("task-status-complete");
+                    }
+                });
+            });
+        }, 3000);
+
+        //Editing of todo text content
+        setTimeout(() => {
+            document.querySelectorAll(".all-tasks-list li").forEach((item) => {
+                item.addEventListener("dblclick", (e) => {
+                    e.preventDefault();
+                    document.querySelector("#new-todo").value =
+                        item.firstElementChild.textContent;
+                    item.classList.add("task-fadeout");
+                    setTimeout(() => {
+                        item.remove();
+                    }, 500);
+                });
+            });
+        }, 3000);
     } else {
         //Alert for Incorrect User Details
         displayLoginStatusMessage("red", loginFailedMsg);
