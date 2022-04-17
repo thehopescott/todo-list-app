@@ -156,43 +156,12 @@ let displayLoginStatusMessage = (color, msg) => {
     loginFormAlert.style.display = "block";
     loginFormAlert.style.opacity = 1;
 };
-
 //Alert Message for New Todo
 let newTodoAlertMessage = (color, msg) => {
     document.querySelector(".todo-form .msg-alert").textContent = msg;
     document.querySelector(".todo-form .msg-alert").style.color = color;
     document.querySelector(".todo-form .msg-alert").style.display = "block";
     document.querySelector(".todo-form .msg-alert").style.opacity = 1;
-};
-
-let saveTodos = () => {
-    let userCurrentTodos = [];
-
-    let isComplete;
-    document.querySelectorAll(".all-tasks-list li").forEach((item) => {
-        if (
-            item.lastElementChild.firstElementChild.classList[1] ===
-            "bi-clock-history"
-        ) {
-            isComplete = false;
-        } else {
-            isComplete = true;
-        }
-        let todoObject = {
-            todoTextContent: item.firstElementChild.textContent,
-            todoStatus: isComplete,
-        };
-        userCurrentTodos.push(todoObject);
-    });
-
-    allTodos.forEach((u) => {
-        if (u.handle === userData.handle) {
-            u.myTodoList = userCurrentTodos;
-        }
-    });
-    localStorage.setItem("todos", JSON.stringify(allTodos));
-
-    location.reload();
 };
 
 //User Registration Process
@@ -310,7 +279,33 @@ loginFormBtn.addEventListener("click", (e) => {
                     i.value = "";
                 });
                 //Add the current tasks list to localStorage
-                saveTodos();
+                let userCurrentTodos = [];
+
+                let isComplete;
+                document
+                    .querySelectorAll(".all-tasks-list li")
+                    .forEach((item) => {
+                        if (
+                            item.lastElementChild.firstElementChild
+                                .classList[1] === "bi-clock-history"
+                        ) {
+                            isComplete = false;
+                        } else {
+                            isComplete = true;
+                        }
+                        let todoObject = {
+                            todoTextContent: item.firstElementChild.textContent,
+                            todoStatus: isComplete,
+                        };
+                        userCurrentTodos.push(todoObject);
+                    });
+
+                allTodos.forEach((u) => {
+                    if (u.handle === userData.handle) {
+                        u.myTodoList = userCurrentTodos;
+                    }
+                });
+                localStorage.setItem("todos", JSON.stringify(allTodos));
 
                 newTodoAlertMessage("green", "Task added successfully.");
                 setTimeout(() => {
