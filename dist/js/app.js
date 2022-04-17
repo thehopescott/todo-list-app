@@ -191,6 +191,8 @@ let saveTodos = () => {
         }
     });
     localStorage.setItem("todos", JSON.stringify(allTodos));
+
+    location.reload();
 };
 
 //User Registration Process
