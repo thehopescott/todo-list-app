@@ -111,12 +111,14 @@ const userCreation = () => {
     location.reload();
 };
 
+// document.querySelector("#login-email").value.split("@")[0];
 //User Data Query Function for Successfully Loggedin Users
-const queryUserData = () => {
-    let userHandle = document.querySelector("#login-email").value.split("@")[0];
+const queryUserData = (userhandle) => {
+    let userHandle = userhandle;
     let todos;
     let jobtitle;
     let city;
+    let fullName;
     allTodos.forEach((userTodos) => {
         if (userTodos.handle === `@${userHandle}`) {
             todos = userTodos.myTodoList;
@@ -132,9 +134,14 @@ const queryUserData = () => {
             city = user.userCity;
         }
     });
+    allUsers.forEach((user) => {
+        if (user.userHandle === `@${userHandle}`) {
+            fullName = user.fullName;
+        }
+    });
 
     const loggedUserDetails = {
-        fullname: document.querySelector("#login-fullname").value,
+        fullname: fullName,
         jobTitle: jobtitle,
         city: city,
         handle: `@${userHandle}`,
@@ -310,33 +317,25 @@ const getWeatherData = (location) => {
         .catch((err) => console.error(err));
 };
 
-const mainAppActiviy = () => {
-    //All Checks out, proceed to log the user in
-    document.querySelector(".auth-loader").style.width = "100%";
-    setTimeout(() => {
-        authWindow.style.display = "none";
-    }, 2100);
-
+// document.querySelector("#login-email").value.split("@")[0]
+const mainAppActiviy = (uh) => {
+    let userhandle = uh;
     //Query User Data for the Logged in User
-    let userData = queryUserData();
+    let userData = queryUserData(userhandle);
 
     getWeatherData(userData.city);
     //INSERT USER DATA INTO DOM
     // 1. Profile Data
-    setTimeout(() => {
-        document.querySelector(".profile-card .user-name").textContent =
-            userData.fullname;
-        document.querySelector(".profile-card .job-title").textContent =
-            userData.jobTitle;
-        document.querySelector(".profile-card .user-handle").textContent =
-            userData.handle;
-    }, 2100);
+    document.querySelector(".profile-card .user-name").textContent =
+        userData.fullname;
+    document.querySelector(".profile-card .job-title").textContent =
+        userData.jobTitle;
+    document.querySelector(".profile-card .user-handle").textContent =
+        userData.handle;
 
     // 2. Task List
     userData.myTodos.forEach((todo) => {
-        setTimeout(() => {
-            appendTodo(todo);
-        }, 2100);
+        appendTodo(todo);
     });
 
     //Profile menu toggle
@@ -448,7 +447,7 @@ const mainAppActiviy = () => {
                 }
             });
             localStorage.setItem("todos", JSON.stringify(allTodos));
-
+            location.reload();
             newTodoAlertMessage("green", "Task added successfully.");
             setTimeout(() => {
                 document.querySelector(".todo-form .msg-alert").style.display =
@@ -459,42 +458,39 @@ const mainAppActiviy = () => {
 
     //TASK ITEM CTA: Changing Status, Editing and Deleting
     //Changing todo status
-    setTimeout(() => {
-        document.querySelectorAll(".all-tasks-list li").forEach((item) => {
-            const todoStatusBtn = item.lastElementChild;
-            todoStatusBtn.addEventListener("click", (e) => {
-                e.preventDefault();
-                if (
-                    todoStatusBtn.firstElementChild.classList[1] ===
-                    "bi-clock-history"
-                ) {
-                    todoStatusBtn.innerHTML = `<i class='bi bi-check-all'></i>`;
-                    todoStatusBtn.classList.add("task-status-complete");
-                } else {
-                    todoStatusBtn.innerHTML = `<i class='bi bi-clock-history'></i>`;
-                    todoStatusBtn.classList.remove("task-status-complete");
-                }
-            });
+    document.querySelectorAll(".all-tasks-list li").forEach((item) => {
+        const todoStatusBtn = item.lastElementChild;
+        todoStatusBtn.addEventListener("click", (e) => {
+            e.preventDefault();
+            if (
+                todoStatusBtn.firstElementChild.classList[1] ===
+                "bi-clock-history"
+            ) {
+                todoStatusBtn.innerHTML = `<i class='bi bi-check-all'></i>`;
+                todoStatusBtn.classList.add("task-status-complete");
+            } else {
+                todoStatusBtn.innerHTML = `<i class='bi bi-clock-history'></i>`;
+                todoStatusBtn.classList.remove("task-status-complete");
+            }
         });
-    }, 3000);
+    });
 
     //Editing of todo text content
-    setTimeout(() => {
-        document.querySelectorAll(".all-tasks-list li").forEach((item) => {
-            item.addEventListener("dblclick", (e) => {
-                e.preventDefault();
-                document.querySelector("#new-todo").value =
-                    item.firstElementChild.textContent;
-                item.classList.add("task-fadeout");
-                setTimeout(() => {
-                    item.remove();
-                }, 500);
-            });
+    document.querySelectorAll(".all-tasks-list li").forEach((item) => {
+        item.addEventListener("dblclick", (e) => {
+            e.preventDefault();
+            document.querySelector("#new-todo").value =
+                item.firstElementChild.textContent;
+            item.classList.add("task-fadeout");
+            setTimeout(() => {
+                item.remove();
+            }, 500);
         });
-    }, 3000);
+    });
 
     //User Logout
     document.querySelector("#app-logout").addEventListener("click", () => {
+        sessionStorage.clear();
         location.reload();
     });
 };
@@ -555,8 +551,24 @@ loginFormBtn.addEventListener("click", (e) => {
                 )
         )
     ) {
+        //All Checks out, proceed to log the user in
+        document.querySelector(".auth-loader").style.width = "100%";
+        setTimeout(() => {
+            authWindow.style.display = "none";
+        }, 2100);
+        //Open a user session
+        const userSession = {
+            username: `${
+                document.querySelector("#login-email").value.split("@")[0]
+            }`,
+            sessionID: `${Math.floor(Math.random() * 2000)}${
+                document.querySelector("#login-email").value.split("@")[0]
+            }${new Date().getTime()}`,
+        };
+        sessionStorage.setItem("currentUser", JSON.stringify(userSession));
+        let uh = userSession.username;
         // Logged in user acitivities
-        mainAppActiviy();
+        mainAppActiviy(uh);
     } else {
         //Alert for Incorrect User Details
         displayLoginStatusMessage("red", loginFailedMsg);
@@ -565,3 +577,12 @@ loginFormBtn.addEventListener("click", (e) => {
         }, 3000);
     }
 });
+
+let currentUserSession;
+if (sessionStorage.getItem("currentUser")) {
+    currentUserSession = JSON.parse(sessionStorage.getItem("currentUser"));
+    document.querySelector(".auth-loader").style.width = "100%";
+    authWindow.style.display = "none";
+    let uh = `${currentUserSession.username}`;
+    mainAppActiviy(uh);
+}
