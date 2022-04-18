@@ -30,12 +30,16 @@
             .now-icon {
                 display: flex;
                 align-items: center;
-                margin-bottom: 1rem;
 
                 .temp {
                     font-size: 4rem;
                     margin-left: 1rem;
                 }
+            }
+
+            .weather-summary {
+                margin-bottom: 1rem;
+                text-transform: capitalize;
             }
 
             .location-city {

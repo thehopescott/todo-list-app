@@ -536,12 +536,16 @@ aside .reminders .reminders-title {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  margin-bottom: 1rem;
 }
 
 .weather-container .weather-info .temp-location .now-icon .temp {
   font-size: 4rem;
   margin-left: 1rem;
+}
+
+.weather-container .weather-info .temp-location .weather-summary {
+  margin-bottom: 1rem;
+  text-transform: capitalize;
 }
 
 .weather-container .weather-info .temp-location .location-city {

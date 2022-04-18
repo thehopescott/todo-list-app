@@ -45,10 +45,11 @@ if (localStorage.getItem("users") == null) {
 
 //The NewUser class
 class NewUser {
-    constructor(name, email, job, userHandle) {
+    constructor(name, email, city, job, userHandle) {
         this.fullName = name;
         this.userEmail = email;
         this.jobTitle = job;
+        this.userCity = city;
         this.userHandle = userHandle;
     }
 }
@@ -93,6 +94,8 @@ let userCreation = () => {
     const newUser = new NewUser(
         `${document.querySelector("#reg-fullname").value}`,
         `${document.querySelector("#reg-email").value}`,
+        `${document.querySelector("#location").value}`,
+
         `${document.querySelector("#job").value}`,
         `@${userHandle}`
     );
@@ -113,6 +116,7 @@ let queryUserData = () => {
     let userHandle = document.querySelector("#login-email").value.split("@")[0];
     let todos;
     let jobtitle;
+    let city;
     allTodos.forEach((userTodos) => {
         if (userTodos.handle === `@${userHandle}`) {
             todos = userTodos.myTodoList;
@@ -123,10 +127,16 @@ let queryUserData = () => {
             jobtitle = user.jobTitle;
         }
     });
+    allUsers.forEach((user) => {
+        if (user.userHandle === `@${userHandle}`) {
+            city = user.userCity;
+        }
+    });
 
     const loggedUserDetails = {
         fullname: document.querySelector("#login-fullname").value,
         jobTitle: jobtitle,
+        city: city,
         handle: `@${userHandle}`,
         myTodos: todos,
     };
@@ -165,6 +175,141 @@ let newTodoAlertMessage = (color, msg) => {
     document.querySelector(".todo-form .msg-alert").style.opacity = 1;
 };
 
+//WEATHER API HANDLING
+let getWeatherData = (location) => {
+    const currentIcon = document.querySelector(".now-icon img");
+    const tempDeg = document.querySelector(".temp-location .temp");
+    const weatherSummary = document.querySelector(
+        ".temp-location .weather-summary"
+    );
+    const locationCity = document.querySelector(
+        ".temp-location .location-city"
+    );
+    const locationCountry = document.querySelector(
+        ".temp-location .location-country"
+    );
+    const locationTime = document.querySelector(
+        ".temp-location .location-time"
+    );
+    const humidityValue = document.querySelector(".humidity .value");
+    const sunriseValue = document.querySelector(".sunrise .value");
+
+    const options = {
+        method: "GET",
+        headers: {
+            "X-RapidAPI-Host": "community-open-weather-map.p.rapidapi.com",
+            "X-RapidAPI-Key":
+                "bcfc92009fmsh985b075c7e9655ep105aa2jsnc98d1c127210",
+        },
+    };
+
+    fetch(
+        `https://community-open-weather-map.p.rapidapi.com/weather?q=${location}&units=imperial`,
+        options
+    )
+        .then((response) => response.json())
+        .then((response) => {
+            let { temp, humidity } = response.main;
+            let city = response.name;
+            let description = response.weather[0].description;
+            let { sunrise, country } = response.sys;
+            let tempToDeg = (temp - 32) * 0.5555;
+
+            tempDeg.innerHTML = `${Math.floor(tempToDeg)}&deg;C`;
+            weatherSummary.textContent = description;
+            locationCity.textContent = city;
+            locationCountry.textContent = country;
+            locationTime.textContent = `as at ${new Date(
+                response.dt * 1000
+            ).toLocaleTimeString()}`;
+            humidityValue.textContent = `${humidity}%`;
+            sunriseValue.textContent = new Date(
+                sunrise * 1000
+            ).toLocaleTimeString();
+
+            function setIcons(description) {
+                const icons = {
+                    "clear sky": "01d@2x.png",
+                    "few clouds": "02d@2x.png",
+                    "scattered clouds": "03d@2x.png",
+                    "broken clouds": "04d@2x.png",
+                    "shower rain": "09d@2x.png",
+                    rain: "10d@2x.png",
+                    thunderstorm: "11d@2x.png",
+                    snow: "13d@2x.png",
+                    mist: "50d@2x.png",
+                };
+
+                switch (description) {
+                    case "clear sky":
+                        currentIcon.setAttribute(
+                            "src",
+                            `http://openweathermap.org/img/wn/${icons["clear sky"]}`
+                        );
+                        break;
+                    case "few clouds":
+                        currentIcon.setAttribute(
+                            "src",
+                            `http://openweathermap.org/img/wn/${icons["few clouds"]}`
+                        );
+                        break;
+                    case "scattered clouds":
+                        currentIcon.setAttribute(
+                            "src",
+                            `http://openweathermap.org/img/wn/${icons["scattered clouds"]}`
+                        );
+                        break;
+                    case "broken clouds":
+                        currentIcon.setAttribute(
+                            "src",
+                            `http://openweathermap.org/img/wn/${icons["broken clouds"]}`
+                        );
+                        break;
+                    case "shower rain":
+                        currentIcon.setAttribute(
+                            "src",
+                            `http://openweathermap.org/img/wn/${icons["shower rain"]}`
+                        );
+                        break;
+                    case "rain":
+                        currentIcon.setAttribute(
+                            "src",
+                            `http://openweathermap.org/img/wn/${icons.rain}`
+                        );
+                        break;
+                    case "thunderstorm":
+                        currentIcon.setAttribute(
+                            "src",
+                            `http://openweathermap.org/img/wn/${icons.thunderstorm}`
+                        );
+                        break;
+                    case "snow":
+                        currentIcon.setAttribute(
+                            "src",
+                            `http://openweathermap.org/img/wn/${icons.snow}`
+                        );
+                        break;
+                    case "mist":
+                        currentIcon.setAttribute(
+                            "src",
+                            `http://openweathermap.org/img/wn/${icons.mist}`
+                        );
+                        break;
+
+                    default:
+                        currentIcon.setAttribute(
+                            "src",
+                            `./img/partly-cloudy.png`
+                        );
+                        break;
+                }
+            }
+
+            setIcons(description);
+        })
+        .catch((err) => console.error(err));
+};
+
 let mainAppActiviy = () => {
     //All Checks out, proceed to log the user in
     document.querySelector(".auth-loader").style.width = "100%";
@@ -175,6 +320,7 @@ let mainAppActiviy = () => {
     //Query User Data for the Logged in User
     let userData = queryUserData();
 
+    getWeatherData(userData.city);
     //INSERT USER DATA INTO DOM
     // 1. Profile Data
     setTimeout(() => {
