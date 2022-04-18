@@ -492,6 +492,11 @@ const mainAppActiviy = () => {
             });
         });
     }, 3000);
+
+    //User Logout
+    document.querySelector("#app-logout").addEventListener("click", () => {
+        location.reload();
+    });
 };
 
 //User Registration Process

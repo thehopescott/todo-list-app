@@ -417,8 +417,7 @@ aside .profile-card .profile-options-container .profile-menu {
   margin-top: 1rem;
 }
 
-aside .profile-card .profile-options-container .profile-menu a {
-  text-decoration: none;
+aside .profile-card .profile-options-container .profile-menu li {
   display: block;
   color: #014042;
   cursor: pointer;
