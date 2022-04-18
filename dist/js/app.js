@@ -71,7 +71,7 @@ allUsers.forEach((user) => {
 });
 
 //Alert Message for Registration Form
-let displayRegistrationStatusMessage = (color, msg) => {
+const displayRegistrationStatusMessage = (color, msg) => {
     regFormAlert.textContent = msg;
     regFormAlert.style.color = color;
     regFormAlert.style.display = "block";
@@ -79,7 +79,7 @@ let displayRegistrationStatusMessage = (color, msg) => {
 };
 
 //Alert Message for Login Form
-let displayLoginStatusMessage = (color, msg) => {
+const displayLoginStatusMessage = (color, msg) => {
     loginFormAlert.textContent = msg;
     loginFormAlert.style.color = color;
     loginFormAlert.style.display = "block";
@@ -87,7 +87,7 @@ let displayLoginStatusMessage = (color, msg) => {
 };
 
 // User creation function
-let userCreation = () => {
+const userCreation = () => {
     //Creating userHandle from the submitted email
     let userHandle = document.querySelector("#reg-email").value.split("@")[0];
 
@@ -112,7 +112,7 @@ let userCreation = () => {
 };
 
 //User Data Query Function for Successfully Loggedin Users
-let queryUserData = () => {
+const queryUserData = () => {
     let userHandle = document.querySelector("#login-email").value.split("@")[0];
     let todos;
     let jobtitle;
@@ -145,7 +145,7 @@ let queryUserData = () => {
 };
 
 //Appending  new todo item to the list
-let appendTodo = (todoObject) => {
+const appendTodo = (todoObject) => {
     const todoItem = document.createElement("li");
     const todoText = document.createElement("p");
     const todoItemStatus = document.createElement("p");
@@ -168,7 +168,7 @@ let appendTodo = (todoObject) => {
 };
 
 //Alert Message for New Todo
-let newTodoAlertMessage = (color, msg) => {
+const newTodoAlertMessage = (color, msg) => {
     document.querySelector(".todo-form .msg-alert").textContent = msg;
     document.querySelector(".todo-form .msg-alert").style.color = color;
     document.querySelector(".todo-form .msg-alert").style.display = "block";
@@ -176,7 +176,7 @@ let newTodoAlertMessage = (color, msg) => {
 };
 
 //WEATHER API HANDLING
-let getWeatherData = (location) => {
+const getWeatherData = (location) => {
     const currentIcon = document.querySelector(".now-icon img");
     const tempDeg = document.querySelector(".temp-location .temp");
     const weatherSummary = document.querySelector(
@@ -310,7 +310,7 @@ let getWeatherData = (location) => {
         .catch((err) => console.error(err));
 };
 
-let mainAppActiviy = () => {
+const mainAppActiviy = () => {
     //All Checks out, proceed to log the user in
     document.querySelector(".auth-loader").style.width = "100%";
     setTimeout(() => {
