@@ -201,21 +201,12 @@ const getWeatherData = (location) => {
     const humidityValue = document.querySelector(".humidity .value");
     const sunriseValue = document.querySelector(".sunrise .value");
 
-    const options = {
-        method: "GET",
-        headers: {
-            "X-RapidAPI-Host": "community-open-weather-map.p.rapidapi.com",
-            "X-RapidAPI-Key":
-                "bcfc92009fmsh985b075c7e9655ep105aa2jsnc98d1c127210",
-        },
-    };
+    const api = `https://api.openweathermap.org/data/2.5/weather?q=${location}&appid=cfc840835a1086dfdb2fb1f1dc59de3c&units=imperial`;
 
-    fetch(
-        `https://community-open-weather-map.p.rapidapi.com/weather?q=${location}&units=imperial`,
-        options
-    )
+    fetch(api)
         .then((response) => response.json())
         .then((response) => {
+            console.log(response);
             let { temp, humidity } = response.main;
             let city = response.name;
             let description = response.weather[0].description;
@@ -386,13 +377,13 @@ const mainAppActiviy = (uh) => {
         });
 
         localStorage.setItem("users", JSON.stringify(allUsers));
-
+        sessionStorage.clear();
         document
             .querySelector(".profile-edit-alert")
             .classList.add("open-pe-alert");
         setTimeout(() => {
             location.reload();
-        }, 5000);
+        }, 4000);
     });
 
     //CREATION OF NEW TASKS

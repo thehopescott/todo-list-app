@@ -1,0 +1,289 @@
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+    body {
+        height: auto;
+    }
+    .auth-container {
+        padding: 4rem;
+        .form-switch,
+        .reg-form,
+        .login-form,
+        .msg-alert,
+        .my-form,
+        button {
+            width: 100%;
+        }
+        .my-form {
+            margin-top: 3rem;
+
+            .form-control {
+                margin: 1.5rem 0;
+                input {
+                    color: #014042;
+                }
+            }
+
+            button {
+                margin-top: 3rem;
+                padding: 1rem 2rem;
+                font-size: 1.4rem;
+                &:hover {
+                    transform: translateY(-0.3rem);
+                    box-shadow: 0.6rem 0.6rem 2rem 0.3rem #41b3a3;
+                }
+            }
+        }
+    }
+    .container {
+        width: 100%;
+        position: relative;
+        border-radius: 0;
+        background: linear-gradient(
+            to bottom,
+            rgba(255, 255, 255, 0.9),
+            rgba(65, 179, 163, 0.25)
+        );
+
+        aside {
+            width: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            padding: 0;
+
+            .profile-card {
+                border-radius: 0;
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+                justify-content: center;
+                padding: 2rem;
+
+                .profile-edit-container {
+                    height: 100%;
+                    border: none;
+                    border-radius: 0rem;
+                    padding: 2rem;
+
+                    i#pe-close {
+                        font-size: 2.5rem;
+                        top: 2rem;
+                        right: 2rem;
+                    }
+
+                    .edit-user-details {
+                        padding: 0 2rem;
+                        margin: 0;
+                        input {
+                            width: 100%;
+                            margin: 1rem auto;
+                            font-size: 1.4rem;
+                        }
+                        button {
+                            margin: 0;
+                            width: 50%;
+                            font-size: 1.4rem;
+                            margin-top: 1rem;
+                        }
+                    }
+                }
+
+                #profile-options {
+                    right: 2rem;
+                    font-size: 4rem;
+                }
+
+                .profile-options-container {
+                    top: 2rem;
+                    right: 2rem;
+                    font-size: 1.3rem;
+                    padding: 2rem;
+                    height: 80%;
+
+                    i {
+                        top: 2rem;
+                        right: 2rem;
+                        font-size: 2.5rem;
+                    }
+
+                    .profile-menu {
+                        list-style: none;
+                        margin-top: 1rem;
+                        font-size: 1.5rem;
+
+                        li {
+                            margin: 0.5rem 0;
+                        }
+                    }
+                }
+
+                .profile-pic {
+                    border-radius: 50%;
+                    border: 0.2rem solid #fff;
+                    width: 10rem;
+                    margin-top: 0;
+                }
+
+                .user-name {
+                    font-size: 2rem;
+                }
+
+                .job-title {
+                    margin-top: 1rem;
+                    font-size: 1.6rem;
+                }
+
+                .user-handle {
+                    font-size: 1.4rem;
+                }
+
+                .social-links {
+                    justify-content: flex-start;
+                    margin: 0;
+                    margin-top: 1rem;
+
+                    a {
+                        font-size: 2.3rem;
+
+                        &:hover {
+                            color: #b83612;
+                        }
+                    }
+                }
+            }
+        }
+
+        main {
+            width: 100%;
+            // height: auto;
+            // padding: 1rem;
+            position: absolute;
+            top: 28rem;
+
+            .weather-container {
+                height: 40%;
+                border-radius: 1rem;
+
+                .weather-info {
+                    padding: 2rem;
+                    flex-direction: column;
+                    align-items: center;
+                    background-position-y: unset;
+                    border-radius: 0.5rem;
+                    height: 100%;
+                    justify-content: space-around;
+
+                    .temp-location {
+                        flex-direction: row-reverse;
+                        width: 100%;
+                        display: flex;
+                        align-items: center;
+                        justify-content: space-between;
+                        .location-deets {
+                            line-height: 1.7rem;
+
+                            .location-country {
+                                margin: 0.5rem 0;
+                            }
+                        }
+                        .now-icon {
+                            align-items: center;
+
+                            img {
+                                width: 5rem;
+                                height: 5rem;
+                            }
+
+                            .temp {
+                                font-size: 2rem;
+                                margin-left: 1rem;
+                                color: #fff;
+                            }
+                        }
+
+                        .weather-summary {
+                            margin-bottom: 1rem;
+                            text-transform: capitalize;
+                            color: #fff;
+                        }
+                    }
+
+                    .humidity-sunrise {
+                        width: 100%;
+                        display: flex;
+                        align-items: center;
+                        justify-content: space-between;
+
+                        .humidity,
+                        .sunrise {
+                            margin: 0;
+                        }
+                    }
+                }
+            }
+
+            .todo-container {
+                flex-direction: column;
+                height: auto;
+
+                .todo-form {
+                    border-radius: 1rem;
+                    padding: 1.5rem 2rem;
+                    width: 100%;
+
+                    .todo-form-title {
+                        font-size: 1.8rem;
+                    }
+                    .msg-alert {
+                        font-size: 1.3rem;
+                    }
+
+                    .todo-form-control {
+                        margin: 2rem 0;
+                        font-size: 1.5rem;
+
+                        input {
+                            font-size: 1.4rem;
+                        }
+                    }
+
+                    button {
+                        margin: 1rem 0;
+                        padding: 1rem 2rem;
+                        border-radius: 50vw;
+                        width: 50%;
+                        font-size: 1.5rem;
+                    }
+                }
+
+                .all-tasks {
+                    margin: 1rem 0;
+                    padding: 2rem;
+                    border-radius: 1rem;
+
+                    width: 100%;
+
+                    .all-tasks-title {
+                        font-size: 1.6rem;
+                    }
+                }
+            }
+        }
+    }
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+}

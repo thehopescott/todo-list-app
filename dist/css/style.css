@@ -123,7 +123,8 @@ body {
 }
 
 .auth-container {
-  position: absolute;
+  position: fixed;
+  bottom: 0;
   width: 100%;
   height: 100vh;
   background: rgba(119, 118, 118, 0.7);
@@ -468,8 +469,7 @@ aside .profile-card .social-links {
 aside .profile-card .social-links a {
   text-decoration: none;
   font-size: 1.7rem;
-  padding: 0.25rem 1rem;
-  border-radius: 0.25rem;
+  margin: 0.25rem 1rem;
   color: #fff;
 }
 
@@ -478,11 +478,7 @@ aside .profile-card .social-links a:hover {
 }
 
 aside .reminders {
-  font-size: 1.4rem;
-}
-
-aside .reminders .reminders-title {
-  margin: 2rem 0;
+  display: none;
 }
 
 .weather-container {
@@ -624,9 +620,6 @@ aside .reminders .reminders-title {
   background: rgba(255, 255, 255, 0.5);
   -webkit-backdrop-filter: blur(0.5rem);
           backdrop-filter: blur(0.5rem);
-  width: -webkit-fit-content;
-  width: -moz-fit-content;
-  width: fit-content;
   border-radius: 2rem;
   padding: 1.5rem 2rem;
   -webkit-box-shadow: 0 0 5rem 0.01rem #cfcfcf inset;
@@ -782,4 +775,279 @@ aside .reminders .reminders-title {
     display: none;
   }
 }
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+  body {
+    height: auto;
+  }
+  .auth-container {
+    padding: 4rem;
+  }
+  .auth-container .form-switch,
+  .auth-container .reg-form,
+  .auth-container .login-form,
+  .auth-container .msg-alert,
+  .auth-container .my-form,
+  .auth-container button {
+    width: 100%;
+  }
+  .auth-container .my-form {
+    margin-top: 3rem;
+  }
+  .auth-container .my-form .form-control {
+    margin: 1.5rem 0;
+  }
+  .auth-container .my-form .form-control input {
+    color: #014042;
+  }
+  .auth-container .my-form button {
+    margin-top: 3rem;
+    padding: 1rem 2rem;
+    font-size: 1.4rem;
+  }
+  .auth-container .my-form button:hover {
+    -webkit-transform: translateY(-0.3rem);
+            transform: translateY(-0.3rem);
+    -webkit-box-shadow: 0.6rem 0.6rem 2rem 0.3rem #41b3a3;
+            box-shadow: 0.6rem 0.6rem 2rem 0.3rem #41b3a3;
+  }
+  .container {
+    width: 100%;
+    position: relative;
+    border-radius: 0;
+    background: -webkit-gradient(linear, left top, left bottom, from(rgba(255, 255, 255, 0.9)), to(rgba(65, 179, 163, 0.25)));
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0.9), rgba(65, 179, 163, 0.25));
+  }
+  .container aside {
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 0;
+  }
+  .container aside .profile-card {
+    border-radius: 0;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    padding: 2rem;
+  }
+  .container aside .profile-card .profile-edit-container {
+    height: 100%;
+    border: none;
+    border-radius: 0rem;
+    padding: 2rem;
+  }
+  .container aside .profile-card .profile-edit-container i#pe-close {
+    font-size: 2.5rem;
+    top: 2rem;
+    right: 2rem;
+  }
+  .container aside .profile-card .profile-edit-container .edit-user-details {
+    padding: 0 2rem;
+    margin: 0;
+  }
+  .container aside .profile-card .profile-edit-container .edit-user-details input {
+    width: 100%;
+    margin: 1rem auto;
+    font-size: 1.4rem;
+  }
+  .container aside .profile-card .profile-edit-container .edit-user-details button {
+    margin: 0;
+    width: 50%;
+    font-size: 1.4rem;
+    margin-top: 1rem;
+  }
+  .container aside .profile-card #profile-options {
+    right: 2rem;
+    font-size: 4rem;
+  }
+  .container aside .profile-card .profile-options-container {
+    top: 2rem;
+    right: 2rem;
+    font-size: 1.3rem;
+    padding: 2rem;
+    height: 80%;
+  }
+  .container aside .profile-card .profile-options-container i {
+    top: 2rem;
+    right: 2rem;
+    font-size: 2.5rem;
+  }
+  .container aside .profile-card .profile-options-container .profile-menu {
+    list-style: none;
+    margin-top: 1rem;
+    font-size: 1.5rem;
+  }
+  .container aside .profile-card .profile-options-container .profile-menu li {
+    margin: 0.5rem 0;
+  }
+  .container aside .profile-card .profile-pic {
+    border-radius: 50%;
+    border: 0.2rem solid #fff;
+    width: 10rem;
+    margin-top: 0;
+  }
+  .container aside .profile-card .user-name {
+    font-size: 2rem;
+  }
+  .container aside .profile-card .job-title {
+    margin-top: 1rem;
+    font-size: 1.6rem;
+  }
+  .container aside .profile-card .user-handle {
+    font-size: 1.4rem;
+  }
+  .container aside .profile-card .social-links {
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+    margin: 0;
+    margin-top: 1rem;
+  }
+  .container aside .profile-card .social-links a {
+    font-size: 2.3rem;
+  }
+  .container aside .profile-card .social-links a:hover {
+    color: #b83612;
+  }
+  .container main {
+    width: 100%;
+    position: absolute;
+    top: 28rem;
+  }
+  .container main .weather-container {
+    height: 40%;
+    border-radius: 1rem;
+  }
+  .container main .weather-container .weather-info {
+    padding: 2rem;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    background-position-y: unset;
+    border-radius: 0.5rem;
+    height: 100%;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+  }
+  .container main .weather-container .weather-info .temp-location {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: reverse;
+        -ms-flex-direction: row-reverse;
+            flex-direction: row-reverse;
+    width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+  .container main .weather-container .weather-info .temp-location .location-deets {
+    line-height: 1.7rem;
+  }
+  .container main .weather-container .weather-info .temp-location .location-deets .location-country {
+    margin: 0.5rem 0;
+  }
+  .container main .weather-container .weather-info .temp-location .now-icon {
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .container main .weather-container .weather-info .temp-location .now-icon img {
+    width: 5rem;
+    height: 5rem;
+  }
+  .container main .weather-container .weather-info .temp-location .now-icon .temp {
+    font-size: 2rem;
+    margin-left: 1rem;
+    color: #fff;
+  }
+  .container main .weather-container .weather-info .temp-location .weather-summary {
+    margin-bottom: 1rem;
+    text-transform: capitalize;
+    color: #fff;
+  }
+  .container main .weather-container .weather-info .humidity-sunrise {
+    width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+  .container main .weather-container .weather-info .humidity-sunrise .humidity,
+  .container main .weather-container .weather-info .humidity-sunrise .sunrise {
+    margin: 0;
+  }
+  .container main .todo-container {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    height: auto;
+  }
+  .container main .todo-container .todo-form {
+    border-radius: 1rem;
+    padding: 1.5rem 2rem;
+    width: 100%;
+  }
+  .container main .todo-container .todo-form .todo-form-title {
+    font-size: 1.8rem;
+  }
+  .container main .todo-container .todo-form .msg-alert {
+    font-size: 1.3rem;
+  }
+  .container main .todo-container .todo-form .todo-form-control {
+    margin: 2rem 0;
+    font-size: 1.5rem;
+  }
+  .container main .todo-container .todo-form .todo-form-control input {
+    font-size: 1.4rem;
+  }
+  .container main .todo-container .todo-form button {
+    margin: 1rem 0;
+    padding: 1rem 2rem;
+    border-radius: 50vw;
+    width: 50%;
+    font-size: 1.5rem;
+  }
+  .container main .todo-container .all-tasks {
+    margin: 1rem 0;
+    padding: 2rem;
+    border-radius: 1rem;
+    width: 100%;
+  }
+  .container main .todo-container .all-tasks .all-tasks-title {
+    font-size: 1.6rem;
+  }
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+/* Medium devices (landscape tablets, 768px and up) */
+/* Large devices (laptops/desktops, 992px and up) */
+/* Extra large devices (large laptops and desktops, 1200px and up) */
 /*# sourceMappingURL=style.css.map */
