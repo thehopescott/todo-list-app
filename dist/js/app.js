@@ -108,7 +108,9 @@ const userCreation = () => {
     localStorage.setItem("users", JSON.stringify(allUsers));
     localStorage.setItem("todos", JSON.stringify(allTodos));
     document.querySelector(".auth-loader").style.width = "100%";
-    location.reload();
+    setTimeout(() => {
+        location.reload();
+    }, 4000);
 };
 
 // document.querySelector("#login-email").value.split("@")[0];
@@ -308,7 +310,6 @@ const getWeatherData = (location) => {
         .catch((err) => console.error(err));
 };
 
-// document.querySelector("#login-email").value.split("@")[0]
 const mainAppActiviy = (uh) => {
     let userhandle = uh;
     //Query User Data for the Logged in User
@@ -513,7 +514,7 @@ regFormBtn.addEventListener("click", (e) => {
         displayRegistrationStatusMessage("green", regSuccessMsg);
         setTimeout(() => {
             regFormAlert.style.display = "none";
-        }, 3000);
+        }, 4000);
     }
 });
 
@@ -545,8 +546,9 @@ loginFormBtn.addEventListener("click", (e) => {
         //All Checks out, proceed to log the user in
         document.querySelector(".auth-loader").style.width = "100%";
         setTimeout(() => {
+            document.querySelector(".container").style.display = "flex";
             authWindow.style.display = "none";
-        }, 2100);
+        }, 3000);
         //Open a user session
         const userSession = {
             username: `${
@@ -572,7 +574,7 @@ loginFormBtn.addEventListener("click", (e) => {
 let currentUserSession;
 if (sessionStorage.getItem("currentUser")) {
     currentUserSession = JSON.parse(sessionStorage.getItem("currentUser"));
-    document.querySelector(".auth-loader").style.width = "100%";
+    document.querySelector(".container").style.display = "flex";
     authWindow.style.display = "none";
     let uh = `${currentUserSession.username}`;
     mainAppActiviy(uh);
