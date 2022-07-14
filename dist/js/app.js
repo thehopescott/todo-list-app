@@ -244,55 +244,55 @@ const getWeatherData = (location) => {
                     case "clear sky":
                         currentIcon.setAttribute(
                             "src",
-                            `http://openweathermap.org/img/wn/${icons["clear sky"]}`
+                            `https://openweathermap.org/img/wn/${icons["clear sky"]}`
                         );
                         break;
                     case "few clouds":
                         currentIcon.setAttribute(
                             "src",
-                            `http://openweathermap.org/img/wn/${icons["few clouds"]}`
+                            `https://openweathermap.org/img/wn/${icons["few clouds"]}`
                         );
                         break;
                     case "scattered clouds":
                         currentIcon.setAttribute(
                             "src",
-                            `http://openweathermap.org/img/wn/${icons["scattered clouds"]}`
+                            `https://openweathermap.org/img/wn/${icons["scattered clouds"]}`
                         );
                         break;
                     case "broken clouds":
                         currentIcon.setAttribute(
                             "src",
-                            `http://openweathermap.org/img/wn/${icons["broken clouds"]}`
+                            `https://openweathermap.org/img/wn/${icons["broken clouds"]}`
                         );
                         break;
                     case "shower rain":
                         currentIcon.setAttribute(
                             "src",
-                            `http://openweathermap.org/img/wn/${icons["shower rain"]}`
+                            `https://openweathermap.org/img/wn/${icons["shower rain"]}`
                         );
                         break;
                     case "rain":
                         currentIcon.setAttribute(
                             "src",
-                            `http://openweathermap.org/img/wn/${icons.rain}`
+                            `https://openweathermap.org/img/wn/${icons.rain}`
                         );
                         break;
                     case "thunderstorm":
                         currentIcon.setAttribute(
                             "src",
-                            `http://openweathermap.org/img/wn/${icons.thunderstorm}`
+                            `https://openweathermap.org/img/wn/${icons.thunderstorm}`
                         );
                         break;
                     case "snow":
                         currentIcon.setAttribute(
                             "src",
-                            `http://openweathermap.org/img/wn/${icons.snow}`
+                            `https://openweathermap.org/img/wn/${icons.snow}`
                         );
                         break;
                     case "mist":
                         currentIcon.setAttribute(
                             "src",
-                            `http://openweathermap.org/img/wn/${icons.mist}`
+                            `https://openweathermap.org/img/wn/${icons.mist}`
                         );
                         break;
 
