@@ -208,7 +208,6 @@ const getWeatherData = (location) => {
     fetch(api)
         .then((response) => response.json())
         .then((response) => {
-            console.log(response);
             let { temp, humidity } = response.main;
             let city = response.name;
             let description = response.weather[0].description;
